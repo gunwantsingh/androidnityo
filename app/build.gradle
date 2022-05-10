@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
+    id "org.sonarqube" version "3.3"
 }
 
 android {
@@ -144,4 +145,10 @@ dependencies {
 
 
 
+}
+
+sonarqube {
+  properties {
+    property "sonar.projectKey", "Test1"
+  }
 }

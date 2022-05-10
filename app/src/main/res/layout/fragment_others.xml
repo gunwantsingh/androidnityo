@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="othersVm"
+            type="com.bb.vib.ui.home.others.OthersVM" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_grey_50"
+        android:fillViewport="true"
+        tools:context=".ui.home.others.OthersFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/userLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/app_white"
+                android:elevation="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/imageUserCard"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/shape_rect_grey_circle_only_stroke"
+                    app:cardCornerRadius="250dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imageUser"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/account_user_sample_image" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/textUserName"
+                    style="@style/TextSubHeadingGrey"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="18dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/inter_medium"
+                    android:gravity="start|center_vertical"
+                    android:maxLines="1"
+                    android:text="Công ty Cổ phần KD Máy Tang Bhui Ji"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toStartOf="@+id/iconUserGo"
+                    app:layout_constraintStart_toEndOf="@+id/imageUserCard"
+                    app:layout_constraintTop_toTopOf="@+id/imageUserCard"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/textUserDetails"
+                    style="@style/TextMessageGrey"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:text="Gần nhất - 23:11 29/02/2021"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageUserCard"
+                    app:layout_constraintEnd_toEndOf="@+id/textUserName"
+                    app:layout_constraintStart_toStartOf="@+id/textUserName"
+                    app:layout_constraintTop_toBottomOf="@+id/textUserName"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <ImageView
+                    android:id="@+id/iconUserGo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="18dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_go_icon"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/secondMenuLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@color/app_white"
+                android:elevation="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/userLayout">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/languageLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?selectableItemBackground"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/languageIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginBottom="14dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_earth_icon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textLanguage"
+                        style="@style/TextSubHeadingGrey"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="18dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:gravity="start|center_vertical"
+                        android:text="@string/ng_n_ng_languages"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/languageIcon"
+                        app:layout_constraintEnd_toStartOf="@+id/iconSeeAllLanguage"
+                        app:layout_constraintStart_toEndOf="@+id/languageIcon"
+                        app:layout_constraintTop_toTopOf="@+id/languageIcon" />
+
+                    <ImageView
+                        android:id="@+id/iconSeeAllLanguage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="18dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_go_icon"
+                        app:layout_constraintBottom_toBottomOf="@+id/languageIcon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/languageIcon" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/divider1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/app_grey_200"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/languageLayout" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/biometricLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?selectableItemBackground"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/divider1">
+
+                    <ImageView
+                        android:id="@+id/biometricIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginBottom="14dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_user_icon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textBiometric"
+                        style="@style/TextSubHeadingGrey"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="18dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:gravity="start|center_vertical"
+                        android:text="@string/text_fingerprint_activation"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/biometricIcon"
+                        app:layout_constraintEnd_toStartOf="@+id/toggleBiometric"
+                        app:layout_constraintStart_toEndOf="@+id/biometricIcon"
+                        app:layout_constraintTop_toTopOf="@+id/biometricIcon" />
+
+                    <ImageView
+                        android:id="@+id/toggleBiometric"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="18dp"
+                        android:checked="true"
+                        android:src="@drawable/switch_selector"
+                        app:layout_constraintBottom_toBottomOf="@+id/biometricIcon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/biometricIcon" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/thirdMenuLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@color/app_white"
+                android:elevation="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/secondMenuLayout">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/passwordLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?selectableItemBackground"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/passwordIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginBottom="14dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_iphone_icon"
+                        app:layout_constraintBottom_toBottomOf="parent "
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textPassword"
+                        style="@style/TextSubHeadingGrey"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="18dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:gravity="start|center_vertical"
+                        android:text="@string/password_amp_pin"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/passwordIcon"
+                        app:layout_constraintEnd_toStartOf="@+id/iconSeeAllPassword"
+                        app:layout_constraintStart_toEndOf="@+id/passwordIcon"
+                        app:layout_constraintTop_toTopOf="@+id/passwordIcon" />
+
+                    <ImageView
+                        android:id="@+id/iconSeeAllPassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="18dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_go_icon"
+                        app:layout_constraintBottom_toBottomOf="@+id/passwordIcon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/passwordIcon" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/divider2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/app_grey_200"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/passwordLayout" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/otpLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?selectableItemBackground"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/divider2">
+
+                    <ImageView
+                        android:id="@+id/otpIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginBottom="14dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_pin_code_icon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textOtp"
+                        style="@style/TextSubHeadingGrey"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="18dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:gravity="start|center_vertical"
+                        android:text="@string/smart_otp_pin"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/otpIcon"
+                        app:layout_constraintEnd_toStartOf="@+id/iconSeeAllOtp"
+                        app:layout_constraintStart_toEndOf="@+id/otpIcon"
+                        app:layout_constraintTop_toTopOf="@+id/otpIcon" />
+
+                    <ImageView
+                        android:id="@+id/iconSeeAllOtp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="18dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_go_icon"
+                        app:layout_constraintBottom_toBottomOf="@+id/otpIcon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/otpIcon" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

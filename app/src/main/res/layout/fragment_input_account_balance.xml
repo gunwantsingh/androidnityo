@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="inputAccountBalanceVm"
+            type="com.bb.vib.ui.accounts.forgotYourAccount.inputAccountBalance.InputAccountBalanceVM" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        tools:context=".ui.accounts.forgotYourAccount.inputAccountBalance.InputAccountBalanceFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textInputBalance"
+                style="@style/TextHeadingGrey"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="18dp"
+                android:textSize="20sp"
+                android:fontFamily="@font/inter_semi_bold"
+                android:gravity="start|center_vertical"
+                android:text="@string/input_account_balance"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textFieldBalance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:elevation="4dp"
+                android:hint="@string/account_balance"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:textColorHint="@color/app_grey_500"
+                android:textSize="15sp"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                android:background="@drawable/shape_edittext_unfocused_background"
+                app:layout_constraintEnd_toEndOf="@+id/textInputBalance"
+                app:layout_constraintStart_toStartOf="@+id/textInputBalance"
+                app:layout_constraintTop_toBottomOf="@+id/textInputBalance">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editBalance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_medium"
+                    android:inputType="number"
+                    android:digits="0123456789"
+                    tools:text="456,789,4134 đ"
+                    android:background="@drawable/shape_edittext_unfocused_background"
+                    android:textAllCaps="true"
+                    android:textSize="13sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonContinue"
+                style="@style/BlueGradientButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="24dp"
+                android:text="@string/text_continue"
+                app:layout_constraintVertical_bias="1.0"
+                app:layout_constraintTop_toBottomOf="@+id/textFieldBalance"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

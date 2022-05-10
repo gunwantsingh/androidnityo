@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="smartOtpPinVm"
+            type="com.bb.vib.ui.home.others.smartOtpPin.SmartOtpPinVM" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_grey_50"
+        android:fillViewport="true"
+        tools:context=".ui.home.others.smartOtpPin.SmartOtpPinFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mainLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/app_white"
+                android:elevation="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/smartOtpLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    android:background="?selectableItemBackground"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/textSmartOtpHead"
+                        style="@style/TextSubHeadingGrey"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="18dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:gravity="start|center_vertical"
+                        android:text="@string/smart_otp"
+                        android:textSize="15sp"
+                        app:layout_constraintVertical_bias="0.26"
+                        app:layout_constraintBottom_toTopOf="@+id/textSmartOtpMessage"
+                        app:layout_constraintEnd_toStartOf="@+id/toggleSmartOtp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textSmartOtpMessage"
+                        style="@style/TextMessageGrey"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:gravity="start|center_vertical"
+                        android:text="@string/activate_smart_otp"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/textSmartOtpHead"
+                        app:layout_constraintStart_toStartOf="@+id/textSmartOtpHead"
+                        app:layout_constraintTop_toBottomOf="@+id/textSmartOtpHead" />
+
+                    <ImageView
+                        android:id="@+id/toggleSmartOtp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="18dp"
+                        android:checked="true"
+                        android:src="@drawable/switch_selector"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/divider1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:visibility="gone"
+                    android:background="@color/app_grey_200"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/smartOtpLayout" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/forgotSmartOtpLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    android:visibility="gone"
+                    android:background="?selectableItemBackground"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/divider1">
+
+                    <TextView
+                        android:id="@+id/textForgotSmartOtpHead"
+                        style="@style/TextSubHeadingGrey"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="18dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:gravity="start|center_vertical"
+                        android:text="@string/forgot_smart_otp_pin"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/iconGoForgotSmartOtp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/iconGoForgotSmartOtp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="18dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_go_icon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/divider2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:visibility="gone"
+                    android:background="@color/app_grey_200"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/forgotSmartOtpLayout" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/changeSmartOtpLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    android:visibility="gone"
+                    android:background="?selectableItemBackground"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/divider2">
+
+                    <TextView
+                        android:id="@+id/textChangeSmartOtpHead"
+                        style="@style/TextSubHeadingGrey"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="18dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:gravity="start|center_vertical"
+                        android:text="@string/text_change_smart_otp_pin"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/iconGoChangeSmartOtp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/iconGoChangeSmartOtp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="18dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_go_icon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/divider3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:visibility="gone"
+                    android:background="@color/app_grey_200"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/changeSmartOtpLayout" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/syncSmartOtpLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    android:visibility="gone"
+                    android:background="?selectableItemBackground"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/divider3">
+
+                    <TextView
+                        android:id="@+id/textSyncSmartOtpHead"
+                        style="@style/TextSubHeadingGrey"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="18dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:gravity="start|center_vertical"
+                        android:text="@string/text_sync_smart_otp"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/iconGoSyncSmartOtp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/iconGoSyncSmartOtp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="18dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_go_icon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

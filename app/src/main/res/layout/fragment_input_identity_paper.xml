@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="inputIdentityPaperVm"
+            type="com.bb.vib.ui.accounts.forgotYourAccount.inputIdentityPaper.InputIdentityPaperVM" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        tools:context=".ui.accounts.forgotYourAccount.inputIdentityPaper.InputIdentityPaperFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textInputIdentity"
+                style="@style/TextHeadingGrey"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="18dp"
+                android:textSize="20sp"
+                android:fontFamily="@font/inter_semi_bold"
+                android:gravity="start|center_vertical"
+                android:text="@string/input_identity_card"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textFieldIdentityCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:elevation="4dp"
+                android:hint="@string/identity_card_no"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:textColorHint="@color/app_grey_500"
+                android:textSize="15sp"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                android:background="@drawable/shape_edittext_unfocused_background"
+                app:layout_constraintEnd_toEndOf="@+id/textInputIdentity"
+                app:layout_constraintStart_toStartOf="@+id/textInputIdentity"
+                app:layout_constraintTop_toBottomOf="@+id/textInputIdentity">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editIdentityCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_medium"
+                    android:inputType="number"
+                    android:digits="0123456789"
+                    tools:text="2324863576358"
+                    android:background="@drawable/shape_edittext_unfocused_background"
+                    android:textAllCaps="true"
+                    android:textSize="13sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textFieldCitizenCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:elevation="4dp"
+                android:hint="@string/citizen_identity_card_no"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:textColorHint="@color/app_grey_500"
+                android:textSize="15sp"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                android:visibility="gone"
+                android:background="@drawable/shape_edittext_unfocused_background"
+                app:layout_constraintEnd_toEndOf="@+id/textInputIdentity"
+                app:layout_constraintStart_toStartOf="@+id/textInputIdentity"
+                app:layout_constraintTop_toBottomOf="@+id/textInputIdentity">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editCitizenIdentityCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_medium"
+                    android:inputType="number"
+                    android:digits="0123456789"
+                    tools:text="2324863576358"
+                    android:background="@drawable/shape_edittext_unfocused_background"
+                    android:textAllCaps="true"
+                    android:textSize="13sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textFieldPassport"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:elevation="4dp"
+                android:hint="@string/passport_no"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:textColorHint="@color/app_grey_500"
+                android:textSize="15sp"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                android:visibility="gone"
+                android:background="@drawable/shape_edittext_unfocused_background"
+                app:layout_constraintEnd_toEndOf="@+id/textInputIdentity"
+                app:layout_constraintStart_toStartOf="@+id/textInputIdentity"
+                app:layout_constraintTop_toBottomOf="@+id/textInputIdentity">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editPassport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_medium"
+                    android:inputType="text"
+                    tools:text="2324863576358"
+                    android:background="@drawable/shape_edittext_unfocused_background"
+                    android:textAllCaps="true"
+                    android:textSize="13sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonContinue"
+                style="@style/BlueGradientButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="24dp"
+                android:text="@string/text_continue"
+                app:layout_constraintVertical_bias="1.0"
+                app:layout_constraintTop_toBottomOf="@+id/textFieldIdentityCard"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

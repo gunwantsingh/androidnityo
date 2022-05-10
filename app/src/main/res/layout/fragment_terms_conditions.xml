@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="termsConditionsVm"
+            type="com.bb.vib.ui.accounts.termsConditions.TermsConditionsVM" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        tools:context=".ui.accounts.termsConditions.TermsConditionsFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.accounts.termsConditions.TermsConditionsFragment">
+
+            <TextView
+                android:id="@+id/textLanguage"
+                style="@style/TextSubHeadingGrey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="18dp"
+                android:background="?selectableItemBackground"
+                android:padding="5dp"
+                android:text="@string/lang_default"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/termsImage"
+                android:layout_width="match_parent"
+                android:layout_height="650dp"
+                android:src="@drawable/terms_image"
+                android:scaleType="fitStart"
+                app:layout_constraintBottom_toTopOf="@+id/buttonAgree"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textLanguage"
+                app:layout_constraintVertical_bias="0.0"/>
+            <TextView
+                android:id="@+id/webViewWindow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginBottom="24dp"
+                android:gravity="start"
+                android:overScrollMode="never"
+                android:visibility="gone"
+                android:scrollbars="none"
+                android:textColor="@color/app_black"
+                app:layout_constraintBottom_toTopOf="@+id/buttonAgree"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textLanguage"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonAgree"
+                style="@style/BlueGradientButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginBottom="24dp"
+                android:text="@string/i_agree"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_gravity="center"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/app_white"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/alertPromptCrossButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="14dp"
+                android:layout_marginTop="14dp"
+                android:src="@drawable/ic_close_translucent_icon"
+                android:background="?selectableItemBackgroundBorderless"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <ImageView
+                android:id="@+id/imageAlertPrompt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/ic_shield_protected_icon"
+                android:scaleType="centerInside"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/textAlertPromptHead"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginEnd="28dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/inter_bold"
+                android:gravity="center"
+                android:text="@string/text_account_recovery"
+                android:textColor="@color/app_black"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageAlertPrompt"/>
+
+            <TextView
+                android:id="@+id/textAlertPromptMessage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginEnd="28dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="24dp"
+                tools:text="You have not finished account recovery process. Are you sure you want to exit?"
+                android:maxLines="5"
+                android:ellipsize="end"
+                style="@style/TextMessageGrey"
+                android:textSize="17sp"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textAlertPromptHead"/>
+
+            <android.widget.Button
+                android:id="@+id/buttonAlertPromptCancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp"
+                android:text="@string/cancel"
+                style="@style/HollowButton"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toBottomOf="@+id/textAlertPromptMessage"
+                app:layout_constraintStart_toStartOf="@+id/textAlertPromptMessage"
+                app:layout_constraintEnd_toStartOf="@+id/buttonAlertPromptAgree"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <android.widget.Button
+                android:id="@+id/buttonAlertPromptAgree"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/agree"
+                android:layout_marginStart="24dp"
+                style="@style/BlueGradientButton"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:background="@drawable/shape_rect_light_blue_gradient_circle"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintTop_toTopOf="@+id/buttonAlertPromptCancel"
+                app:layout_constraintStart_toEndOf="@+id/buttonAlertPromptCancel"
+                app:layout_constraintEnd_toEndOf="@+id/textAlertPromptMessage"
+                app:layout_constraintBottom_toBottomOf="@+id/buttonAlertPromptCancel"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

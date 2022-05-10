@@ -1,0 +1,51 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="60dp"
+    android:height="60dp"
+    android:viewportWidth="60"
+    android:viewportHeight="60">
+  <path
+      android:pathData="M30,55C43.8071,55 55,43.8071 55,30C55,16.1929 43.8071,5 30,5C16.1929,5 5,16.1929 5,30C5,43.8071 16.1929,55 30,55Z"
+      android:strokeAlpha="0.3"
+      android:fillAlpha="0.3">
+    <aapt:attr name="android:fillColor">
+      <gradient 
+          android:startY="5"
+          android:startX="23.2493"
+          android:endY="54.9921"
+          android:endX="23.877"
+          android:type="linear">
+        <item android:offset="0" android:color="#FFFE9B25"/>
+        <item android:offset="1" android:color="#FFFF5922"/>
+      </gradient>
+    </aapt:attr>
+  </path>
+  <path
+      android:pathData="M32.5,27.5C32.5,26.1193 31.3807,25 30,25C28.6193,25 27.5,26.1193 27.5,27.5V40C27.5,41.3807 28.6193,42.5 30,42.5C31.3807,42.5 32.5,41.3807 32.5,40V27.5Z">
+    <aapt:attr name="android:fillColor">
+      <gradient 
+          android:startY="25"
+          android:startX="29.3249"
+          android:endY="42.4663"
+          android:endX="30.0925"
+          android:type="linear">
+        <item android:offset="0" android:color="#FFFE9B25"/>
+        <item android:offset="1" android:color="#FFFF5922"/>
+      </gradient>
+    </aapt:attr>
+  </path>
+  <path
+      android:pathData="M32.5,20C32.5,18.6193 31.3807,17.5 30,17.5C28.6193,17.5 27.5,18.6193 27.5,20C27.5,21.3807 28.6193,22.5 30,22.5C31.3807,22.5 32.5,21.3807 32.5,20Z">
+    <aapt:attr name="android:fillColor">
+      <gradient 
+          android:startY="17.5"
+          android:startX="29.3249"
+          android:endY="22.4992"
+          android:endX="29.3877"
+          android:type="linear">
+        <item android:offset="0" android:color="#FFFE9B25"/>
+        <item android:offset="1" android:color="#FFFF5922"/>
+      </gradient>
+    </aapt:attr>
+  </path>
+</vector>

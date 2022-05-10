@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation.xml"
+    app:startDestination="@id/navigation_terms_conditions">
+
+    <fragment
+        android:id="@+id/navigation_terms_conditions"
+        android:name="com.bb.vib.ui.accounts.termsConditions.TermsConditionsFragment"
+        android:label="Terms &amp; Conditions"
+        tools:layout="@layout/fragment_terms_conditions">
+        <action
+            android:id="@+id/action_navigation_terms_conditions_to_navigation_login"
+            app:destination="@id/navigation_login" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="com.bb.vib.ui.accounts.login.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_navigation_login_to_navigation_create_pin"
+            app:destination="@id/navigation_create_pin" />
+        <action
+            android:id="@+id/action_navigation_login_to_inputBusinessLicenseFragment"
+            app:destination="@id/inputBusinessLicenseFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_create_pin"
+        android:name="com.bb.vib.ui.accounts.createPin.CreatePinFragment"
+        android:label="CreatePinFragment"
+        tools:layout="@layout/fragment_create_pin">
+        <action
+            android:id="@+id/action_navigation_create_pin_to_navigation_confirm_pin"
+            app:destination="@id/navigation_confirm_pin"
+            app:popUpTo="@id/navigation_login"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_confirm_pin"
+        android:name="com.bb.vib.ui.accounts.createPin.CreatePinFragment"
+        android:label="ConfirmPinFragment"
+        tools:layout="@layout/fragment_create_pin" >
+        <action
+            android:id="@+id/action_navigation_confirm_pin_to_navigation_use_face_id"
+            app:destination="@id/navigation_use_face_id"
+            app:popUpTo="@id/navigation_login"
+            app:popUpToInclusive="false"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_use_face_id"
+        android:name="com.bb.vib.ui.accounts.useFaceId.UseFaceIdFragment"
+        android:label="UseFaceIdFragment"
+        tools:layout="@layout/fragment_use_face_id" >
+        <action
+            android:id="@+id/action_navigation_use_face_id_to_navigation_input_pin"
+            app:destination="@id/navigation_input_pin" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_input_pin"
+        android:name="com.bb.vib.ui.accounts.createPin.CreatePinFragment"
+        android:label="InputPinFragment"
+        tools:layout="@layout/fragment_create_pin">
+        <action
+            android:id="@+id/action_navigation_input_pin_to_navigation_forgot_pin_username"
+            app:destination="@id/navigation_forgot_pin_username" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_forgot_pin_username"
+        android:name="com.bb.vib.ui.accounts.forgotPin.ForgotPinFragment"
+        android:label="ForgotPinUsernameFragment"
+        tools:layout="@layout/fragment_forgot_pin" >
+        <action
+            android:id="@+id/action_navigation_forgot_pin_username_to_navigation_forgot_pin_password"
+            app:destination="@id/navigation_forgot_pin_password" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_forgot_pin_password"
+        android:name="com.bb.vib.ui.accounts.forgotPin.ForgotPinFragment"
+        android:label="ForgotPinPasswordFragment"
+        tools:layout="@layout/fragment_forgot_pin" >
+        <action
+            android:id="@+id/action_navigation_forgot_pin_password_to_navigation_create_new_pin"
+            app:destination="@id/navigation_create_new_pin" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_create_new_pin"
+        android:name="com.bb.vib.ui.accounts.createPin.CreatePinFragment"
+        android:label="CreateNewPinFragment"
+        tools:layout="@layout/fragment_create_pin">
+        <action
+            android:id="@+id/action_navigation_create_new_pin_to_navigation_confirm_new_pin"
+            app:destination="@id/navigation_confirm_new_pin" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_confirm_new_pin"
+        android:name="com.bb.vib.ui.accounts.createPin.CreatePinFragment"
+        android:label="ConfirmNewPinFragment"
+        tools:layout="@layout/fragment_create_pin">
+        <action
+            android:id="@+id/action_navigation_confirm_new_pin_to_navigation_confirm_smart_pin"
+            app:destination="@id/navigation_confirm_smart_pin" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_confirm_smart_pin"
+        android:name="com.bb.vib.ui.accounts.confirmSmartPin.ConfirmSmartPinFragment"
+        android:label="ConfirmSmartPinFragment"
+        tools:layout="@layout/fragment_confirm_smart_pin"/>
+
+    <fragment
+        android:id="@+id/navigation_login_pin"
+        android:name="com.bb.vib.ui.accounts.loginPin.LoginPinFragment"
+        android:label="LoginPin"
+        tools:layout="@layout/fragment_login_pin">
+        <action
+            android:id="@+id/action_navigation_login_pin_to_navigation_forgot_pin_username"
+            app:destination="@id/navigation_forgot_pin_username" />
+        <action
+            android:id="@+id/action_navigation_login_pin_to_loginActiveBiometricConfirmPinFragment"
+            app:destination="@id/loginActiveBiometricConfirmPinFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginActiveBiometricConfirmPinFragment"
+        android:name="com.bb.vib.ui.accounts.loginPin.loginActiveBiometric.LoginActiveBiometricConfirmPinFragment"
+        android:label="LoginActiveBiometricConfirmPinFragment"
+        tools:layout="@layout/fragment_login_active_biometric_confirm_pin"/>
+
+    <fragment
+        android:id="@+id/inputBusinessLicenseFragment"
+        android:name="com.bb.vib.ui.accounts.forgotYourAccount.inputBusinessLicense.InputBusinessLicenseFragment"
+        android:label="InputBusinessLicenseFragment"
+        tools:layout="@layout/fragment_input_business_license">
+        <action
+            android:id="@+id/action_inputBusinessLicenseFragment_to_selectIdentityPaperFragment"
+            app:destination="@id/selectIdentityPaperFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/selectIdentityPaperFragment"
+        android:name="com.bb.vib.ui.accounts.forgotYourAccount.selectIdentityPaper.SelectIdentityPaperFragment"
+        android:label="SelectIdentityPaperFragment"
+        tools:layout="@layout/fragment_select_identity_paper">
+        <action
+            android:id="@+id/action_selectIdentityPaperFragment_to_inputIdentityPaperFragment"
+            app:destination="@id/inputIdentityPaperFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/inputIdentityPaperFragment"
+        android:name="com.bb.vib.ui.accounts.forgotYourAccount.inputIdentityPaper.InputIdentityPaperFragment"
+        android:label="InputIdentityPaperFragment"
+        tools:layout="@layout/fragment_input_identity_paper">
+        <action
+            android:id="@+id/action_inputIdentityPaperFragment_to_inputAccountNumberFragment"
+            app:destination="@id/inputAccountNumberFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/inputAccountNumberFragment"
+        android:name="com.bb.vib.ui.accounts.forgotYourAccount.inputAccountNumber.InputAccountNumberFragment"
+        android:label="InputAccountNumberFragment"
+        tools:layout="@layout/fragment_input_account_number">
+        <action
+            android:id="@+id/action_inputAccountNumberFragment_to_inputAccountBalanceFragment"
+            app:destination="@id/inputAccountBalanceFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/inputAccountBalanceFragment"
+        android:name="com.bb.vib.ui.accounts.forgotYourAccount.inputAccountBalance.InputAccountBalanceFragment"
+        android:label="InputAccountBalanceFragment"
+        tools:layout="@layout/fragment_input_account_balance">
+        <action
+            android:id="@+id/action_inputAccountBalanceFragment_to_verificationCodeFragment"
+            app:destination="@id/verificationCodeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/verificationCodeFragment"
+        android:name="com.bb.vib.ui.accounts.forgotYourAccount.verificationCode.VerificationCodeFragment"
+        android:label="VerificationCodeFragment"
+        tools:layout="@layout/fragment_verification_code">
+        <action
+            android:id="@+id/action_verificationCodeFragment_to_selectCredentialsFragment"
+            app:destination="@id/selectCredentialsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/selectCredentialsFragment"
+        android:name="com.bb.vib.ui.accounts.forgotYourAccount.selectCredentials.SelectCredentialsFragment"
+        android:label="SelectCredentialsFragment"
+        tools:layout="@layout/fragment_select_credentials">
+        <action
+            android:id="@+id/action_selectCredentialsFragment_to_createNewPasswordFragment"
+            app:destination="@id/createNewPasswordFragment" />
+        <action
+            android:id="@+id/action_selectCredentialsFragment_to_authenticateOtpFragment"
+            app:destination="@id/authenticateOtpFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createNewPasswordFragment"
+        android:name="com.bb.vib.ui.accounts.forgotYourAccount.forgotUsernamePassword.createNewPassword.CreateNewPasswordFragment"
+        android:label="CreateNewPasswordFragment"
+        tools:layout="@layout/fragment_create_new_password">
+        <action
+            android:id="@+id/action_createNewPasswordFragment_to_confirmNewPasswordFragment"
+            app:destination="@id/confirmNewPasswordFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/confirmNewPasswordFragment"
+        android:name="com.bb.vib.ui.accounts.forgotYourAccount.forgotUsernamePassword.confirmNewPassword.ConfirmNewPasswordFragment"
+        android:label="ConfirmNewPasswordFragment"
+        tools:layout="@layout/fragment_confirm_new_password">
+        <action
+            android:id="@+id/action_confirmNewPasswordFragment_to_authenticateOtpFragment"
+            app:destination="@id/authenticateOtpFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/authenticateOtpFragment"
+        android:name="com.bb.vib.ui.accounts.forgotYourAccount.forgotUsernamePassword.authenticateOtp.AuthenticateOtpFragment"
+        android:label="AuthenticateOtpFragment"
+        tools:layout="@layout/fragment_authenticate_otp">
+        <action
+            android:id="@+id/action_authenticateOtpFragment_to_usernameRecoveredFragment"
+            app:destination="@id/usernameRecoveredFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/usernameRecoveredFragment"
+        android:name="com.bb.vib.ui.accounts.forgotYourAccount.forgotUsernamePassword.usernameRecovered.UsernameRecoveredFragment"
+        android:label="UsernameRecoveredFragment"
+        tools:layout="@layout/fragment_username_recovered"/>
+
+</navigation>

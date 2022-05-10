@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="loginVm"
+            type="com.bb.vib.ui.accounts.login.LoginVM" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        tools:context=".ui.accounts.login.LoginFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/vibSmeIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_vib_sme_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textFieldUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="18dp"
+                android:elevation="4dp"
+                android:hint="@string/username"
+                android:background="@drawable/shape_edittext_unfocused_background"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:textColorHint="@color/app_grey_500"
+                android:textSize="15sp"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/vibSmeIcon">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_medium"
+                    android:inputType="textCapCharacters"
+                    android:background="@drawable/shape_edittext_unfocused_background"
+                    tools:text="NGUYENANHMINH"
+                    android:textAllCaps="true"
+                    android:textSize="13sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textFieldPassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:elevation="4dp"
+                android:hint="@string/password"
+                android:textColorHint="@color/app_grey_500"
+                android:textSize="15sp"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:endIconMode="password_toggle"
+                android:background="@drawable/shape_edittext_unfocused_background"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                app:passwordToggleDrawable="@drawable/show_password_selector"
+                app:layout_constraintEnd_toEndOf="@+id/textFieldUsername"
+                app:layout_constraintStart_toStartOf="@+id/textFieldUsername"
+                app:layout_constraintTop_toBottomOf="@+id/textFieldUsername">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_medium"
+                    android:inputType="textPassword|textNoSuggestions"
+                    android:background="@drawable/shape_edittext_unfocused_background"
+                    android:textSize="13sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/textForgotAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/forgot_account"
+                android:textSize="13sp"
+                android:textColor="@color/app_grey_700"
+                android:fontFamily="@font/inter_semi_bold"
+                app:layout_constraintEnd_toEndOf="@+id/textFieldPassword"
+                app:layout_constraintTop_toBottomOf="@+id/textFieldPassword"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonLogin"
+                style="@style/BlueGradientButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="24dp"
+                android:text="@string/log_in"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textForgotAccount"
+                app:layout_constraintEnd_toEndOf="@+id/textFieldPassword"
+                app:layout_constraintStart_toStartOf="@+id/textFieldPassword" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation.xml"
+    app:startDestination="@id/navigation_account">
+
+    <fragment
+        android:id="@+id/navigation_account"
+        android:name="com.bb.vib.ui.home.account.AccountFragment"
+        android:label="Account"
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_navigation_account_to_currentAccountFragment"
+            app:destination="@id/currentAccountFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_others"
+        android:name="com.bb.vib.ui.home.others.OthersFragment"
+        android:label="Others"
+        tools:layout="@layout/fragment_others">
+        <action
+            android:id="@+id/action_navigation_others_to_navigation_others_password_pin"
+            app:destination="@id/navigation_others_password_pin" />
+        <action
+            android:id="@+id/action_navigation_others_to_navigation_other_use_fingerprint"
+            app:destination="@id/navigation_other_use_fingerprint" />
+        <action
+            android:id="@+id/action_navigation_others_to_smartOtpPinFragment"
+            app:destination="@id/smartOtpPinFragment" />
+        <action
+            android:id="@+id/action_navigation_others_to_activeBiometricConfirmPinFragment"
+            app:destination="@id/activeBiometricConfirmPinFragment" />
+        <action
+            android:id="@+id/action_navigation_others_to_deactivateBiometricConfirmPinFragment"
+            app:destination="@id/deactivateBiometricConfirmPinFragment" />
+        <action
+            android:id="@+id/action_navigation_others_to_accountInfoFragment"
+            app:destination="@id/accountInfoFragment" />
+        <action
+            android:id="@+id/action_navigation_others_to_languageSettingsFragment"
+            app:destination="@id/languageSettingsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_others_password_pin"
+        android:name="com.bb.vib.ui.home.others.passwordPin.PasswordPinFragment"
+        android:label="Password &amp; Pin"
+        tools:layout="@layout/fragment_password_pin">
+        <action
+            android:id="@+id/action_navigation_others_password_pin_to_navigation_other_forgot_pin_username"
+            app:destination="@id/navigation_other_forgot_pin_username" />
+        <action
+            android:id="@+id/action_navigation_others_password_pin_to_currentPinFragment"
+            app:destination="@id/currentPinFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_other_forgot_pin_username"
+        android:name="com.bb.vib.ui.home.others.otherForgotPin.OtherForgotPinFragment"
+        android:label="OtherForgotPinUsernameFragment"
+        tools:layout="@layout/fragment_other_forgot_pin">
+        <action
+            android:id="@+id/action_navigation_other_forgot_pin_username_to_navigation_other_forgot_pin_password"
+            app:destination="@id/navigation_other_forgot_pin_password" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_other_forgot_pin_password"
+        android:name="com.bb.vib.ui.home.others.otherForgotPin.OtherForgotPinFragment"
+        android:label="OtherForgotPinPasswordFragment"
+        tools:layout="@layout/fragment_other_forgot_pin">
+        <action
+            android:id="@+id/action_navigation_other_forgot_pin_password_to_navigation_other_create_new_pin"
+            app:destination="@id/navigation_other_create_new_pin"
+            app:popUpTo="@id/navigation_others_password_pin"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_other_create_new_pin"
+        android:name="com.bb.vib.ui.home.others.otherCreatePin.OtherCreatePinFragment"
+        android:label="OtherCreateNewPinFragment"
+        tools:layout="@layout/fragment_other_create_pin">
+        <action
+            android:id="@+id/action_navigation_other_create_new_pin_to_navigation_other_confirm_new_pin"
+            app:destination="@id/navigation_other_confirm_new_pin" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_other_confirm_new_pin"
+        android:name="com.bb.vib.ui.home.others.otherCreatePin.OtherCreatePinFragment"
+        android:label="OtherConfirmNewPinFragment"
+        tools:layout="@layout/fragment_other_create_pin">
+        <action
+            android:id="@+id/action_navigation_confirm_new_pin_to_navigation_other_confirm_smart_pin"
+            app:destination="@id/navigation_other_confirm_smart_pin" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_other_confirm_smart_pin"
+        android:name="com.bb.vib.ui.home.others.otherConfirmSmartPin.OtherConfirmSmartPinFragment"
+        android:label="OtherConfirmSmartPinFragment"
+        tools:layout="@layout/fragment_other_confirm_smart_pin" />
+
+    <fragment
+        android:id="@+id/navigation_other_input_pin"
+        android:name="com.bb.vib.ui.home.others.otherCreatePin.OtherCreatePinFragment"
+        android:label="OtherInputPinFragment"
+        tools:layout="@layout/fragment_other_create_pin">
+        <action
+            android:id="@+id/action_navigation_other_input_pin_to_navigation_other_forgot_pin_username"
+            app:destination="@id/navigation_other_forgot_pin_username" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_other_use_fingerprint"
+        android:name="com.bb.vib.ui.home.others.otherUseFingerprint.OtherUseFingerprintFragment"
+        android:label="OtherUseFingerprintFragment"
+        tools:layout="@layout/fragment_other_use_fingerprint">
+        <action
+            android:id="@+id/action_navigation_other_use_fingerprint_to_navigation_other_input_pin"
+            app:destination="@id/navigation_other_input_pin" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/currentPinFragment"
+        android:name="com.bb.vib.ui.home.others.passwordPin.changePin.currentPin.CurrentPinFragment"
+        android:label="CurrentPinFragment"
+        tools:layout="@layout/fragment_current_pin">
+        <action
+            android:id="@+id/action_currentPinFragment_to_newPinFragment"
+            app:destination="@id/newPinFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/newPinFragment"
+        android:name="com.bb.vib.ui.home.others.passwordPin.changePin.newPin.NewPinFragment"
+        android:label="NewPinFragment"
+        tools:layout="@layout/fragment_new_pin">
+        <action
+            android:id="@+id/action_newPinFragment_to_confirmNewPinFragment"
+            app:destination="@id/confirmNewPinFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/confirmNewPinFragment"
+        android:name="com.bb.vib.ui.home.others.passwordPin.changePin.confirmNewPin.ConfirmNewPinFragment"
+        android:label="ConfirmNewPinFragment"
+        tools:layout="@layout/fragment_confirm_new_pin"/>
+
+    <fragment
+        android:id="@+id/smartOtpPinFragment"
+        android:name="com.bb.vib.ui.home.others.smartOtpPin.SmartOtpPinFragment"
+        android:label="SmartOtpPinFragment"
+        tools:layout="@layout/fragment_smart_otp_pin">
+        <action
+            android:id="@+id/action_smartOtpPinFragment_to_createSmartOtpFragment"
+            app:destination="@id/createSmartOtpFragment" />
+        <action
+            android:id="@+id/action_smartOtpPinFragment_to_smartOtpAuthenticationFragment"
+            app:destination="@id/smartOtpAuthenticationFragment" />
+        <action
+            android:id="@+id/action_smartOtpPinFragment_to_usernameForgotSmartOtpFragment"
+            app:destination="@id/usernameForgotSmartOtpFragment" />
+        <action
+            android:id="@+id/action_smartOtpPinFragment_to_currentSmartOtpFragment"
+            app:destination="@id/currentSmartOtpFragment" />
+        <action
+            android:id="@+id/action_smartOtpPinFragment_to_newSmartOtpFragment"
+            app:destination="@id/newSmartOtpFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createSmartOtpFragment"
+        android:name="com.bb.vib.ui.home.others.smartOtpPin.activeSmartOtp.createSmartOtp.CreateSmartOtpFragment"
+        android:label="CreateSmartOtpFragment"
+        tools:layout="@layout/fragment_create_smart_otp">
+        <action
+            android:id="@+id/action_createSmartOtpFragment_to_confirmSmartOtpFragment"
+            app:destination="@id/confirmSmartOtpFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/confirmSmartOtpFragment"
+        android:name="com.bb.vib.ui.home.others.smartOtpPin.activeSmartOtp.confirmSmartOtp.ConfirmSmartOtpFragment"
+        android:label="ConfirmSmartOtpFragment"
+        tools:layout="@layout/fragment_confirm_smart_otp">
+        <action
+            android:id="@+id/action_confirmSmartOtpFragment_to_otpAuthenticationFragment"
+            app:destination="@id/otpAuthenticationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/otpAuthenticationFragment"
+        android:name="com.bb.vib.ui.home.others.smartOtpPin.activeSmartOtp.otpAuthentication.OtpAuthenticationFragment"
+        android:label="OtpAuthenticationFragment"
+        tools:layout="@layout/fragment_otp_authentication"/>
+
+    <fragment
+        android:id="@+id/smartOtpAuthenticationFragment"
+        android:name="com.bb.vib.ui.home.others.smartOtpPin.inactiveSmartOtp.smartOtpAuthentication.SmartOtpAuthenticationFragment"
+        android:label="SmartOtpAuthenticationFragment"
+        tools:layout="@layout/fragment_smart_otp_authentication"/>
+
+    <fragment
+        android:id="@+id/usernameForgotSmartOtpFragment"
+        android:name="com.bb.vib.ui.home.others.smartOtpPin.forgotSmartOtp.usernameForgotSmartOtp.UsernameForgotSmartOtpFragment"
+        android:label="UsernameForgotSmartOtpFragment"
+        tools:layout="@layout/fragment_username_forgot_smart_otp">
+        <action
+            android:id="@+id/action_usernameForgotSmartOtpFragment_to_passwordForgotSmartOtpFragment"
+            app:destination="@id/passwordForgotSmartOtpFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/passwordForgotSmartOtpFragment"
+        android:name="com.bb.vib.ui.home.others.smartOtpPin.forgotSmartOtp.passwordForgotSmartOtp.PasswordForgotSmartOtpFragment"
+        android:label="PasswordForgotSmartOtpFragment"
+        tools:layout="@layout/fragment_password_forgot_smart_otp">
+        <action
+            android:id="@+id/action_passwordForgotSmartOtpFragment_to_newSmartOtpFragment"
+            app:destination="@id/newSmartOtpFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/newSmartOtpFragment"
+        android:name="com.bb.vib.ui.home.others.smartOtpPin.forgotSmartOtp.newSmartOtp.NewSmartOtpFragment"
+        android:label="NewSmartOtpFragment"
+        tools:layout="@layout/fragment_new_smart_otp">
+        <action
+            android:id="@+id/action_newSmartOtpFragment_to_confirmNewSmartOtpFragment"
+            app:destination="@id/confirmNewSmartOtpFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/confirmNewSmartOtpFragment"
+        android:name="com.bb.vib.ui.home.others.smartOtpPin.forgotSmartOtp.confirmNewSmartOtp.ConfirmNewSmartOtpFragment"
+        android:label="ConfirmNewSmartOtpFragment"
+        tools:layout="@layout/fragment_confirm_new_smart_otp">
+        <action
+            android:id="@+id/action_confirmNewSmartOtpFragment_to_otpAuthorizationFragment"
+            app:destination="@id/otpAuthorizationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/currentSmartOtpFragment"
+        android:name="com.bb.vib.ui.home.others.smartOtpPin.changeSmartOtp.currentSmartOtp.CurrentSmartOtpFragment"
+        android:label="CurrentSmartOtpFragment"
+        tools:layout="@layout/fragment_current_smart_otp">
+        <action
+            android:id="@+id/action_currentSmartOtpFragment_to_changeNewSmartOtpFragment"
+            app:destination="@id/changeNewSmartOtpFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/changeNewSmartOtpFragment"
+        android:name="com.bb.vib.ui.home.others.smartOtpPin.changeSmartOtp.changeNewSmartOtp.ChangeNewSmartOtpFragment"
+        android:label="ChangeNewSmartOtpFragment"
+        tools:layout="@layout/fragment_change_new_smart_otp">
+        <action
+            android:id="@+id/action_changeNewSmartOtpFragment_to_confirmChangeNewSmartOtpFragment"
+            app:destination="@id/confirmChangeNewSmartOtpFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/confirmChangeNewSmartOtpFragment"
+        android:name="com.bb.vib.ui.home.others.smartOtpPin.changeSmartOtp.confirmChangeNewSmartOtp.ConfirmChangeNewSmartOtpFragment"
+        android:label="ConfirmChangeNewSmartOtpFragment"
+        tools:layout="@layout/fragment_confirm_change_new_smart_otp"/>
+
+    <fragment
+        android:id="@+id/activeBiometricConfirmPinFragment"
+        android:name="com.bb.vib.ui.home.others.activeBiometric.ActiveBiometricConfirmPinFragment"
+        android:label="ActiveBiometricConfirmPinFragment"
+        tools:layout="@layout/fragment_active_biometric_confirm_pin"/>
+
+    <fragment
+        android:id="@+id/deactivateBiometricConfirmPinFragment"
+        android:name="com.bb.vib.ui.home.others.deactivateBiometric.DeactivateBiometricConfirmPinFragment"
+        android:label="DeactivateBiometricConfirmPinFragment"
+        tools:layout="@layout/fragment_deactivate_biometric_confirm_pin"/>
+
+    <fragment
+        android:id="@+id/accountInfoFragment"
+        android:name="com.bb.vib.ui.home.others.accountInfo.AccountInfoFragment"
+        android:label="AccountInfoFragment"
+        tools:layout="@layout/fragment_account_info"/>
+
+    <fragment
+        android:id="@+id/otpAuthorizationFragment"
+        android:name="com.bb.vib.ui.home.others.smartOtpPin.forgotSmartOtp.otpAuthorization.OtpAuthorizationFragment"
+        android:label="OtpAuthorizationFragment"
+        tools:layout="@layout/fragment_otp_authorization"/>
+
+    <fragment
+        android:id="@+id/languageSettingsFragment"
+        android:name="com.bb.vib.ui.home.others.languageSettings.LanguageSettingsFragment"
+        android:label="LanguageSettingsFragment"
+        tools:layout="@layout/fragment_language_settings"/>
+
+    <fragment
+        android:id="@+id/currentAccountFragment"
+        android:name="com.bb.vib.ui.home.account.currentAccount.CurrentAccountFragment"
+        android:label="CurrentAccountFragment"
+        tools:layout="@layout/fragment_current_account"/>
+
+</navigation>

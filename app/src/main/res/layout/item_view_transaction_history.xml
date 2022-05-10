@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:background="?android:selectableItemBackground"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/transactionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textTransactionComment"
+            style="@style/TextSubHeadingGrey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/inter_medium"
+            android:gravity="start|center_vertical"
+            android:text="Ho Chi Minh Authorities paid"
+            android:textSize="15sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintEnd_toStartOf="@+id/textTransactionAmount"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textTransactionAmount"
+            style="@style/TextSubHeadingGrey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/inter_medium"
+            android:gravity="start|center_vertical"
+            android:text="1,500,000 đ"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textTransactionComment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textTransactionComment" />
+
+        <TextView
+            android:id="@+id/textTransactionDate"
+            style="@style/TextSubHeadingGrey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/inter_regular"
+            android:gravity="start|center_vertical"
+            android:text="12/07/2020"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="13sp"
+            android:textColor="@color/app_grey_500"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textTransactionAmount"
+            app:layout_constraintTop_toBottomOf="@+id/textTransactionComment"
+            app:layout_constraintStart_toStartOf="@+id/textTransactionComment" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/app_grey_200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/transactionLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

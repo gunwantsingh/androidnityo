@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="currentAccountVm"
+            type="com.bb.vib.ui.home.account.currentAccount.CurrentAccountVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_grey_50"
+        tools:context=".ui.home.account.currentAccount.CurrentAccountFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_rect_blue_gradient_vertical"
+            android:elevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="18dp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_toolbar_back_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textNetBalanceHead"
+                style="@style/TextSubHeadingGrey"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="21dp"
+                android:layout_marginEnd="18dp"
+                android:gravity="start|center_vertical"
+                android:text="@string/net_balance"
+                android:textColor="@color/app_white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/backButton"
+                app:layout_constraintTop_toBottomOf="@+id/backButton" />
+
+            <TextView
+                android:id="@+id/textNetBalance"
+                style="@style/TextHeadingGrey28"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="18dp"
+                android:ellipsize="end"
+                android:gravity="start|center_vertical"
+                android:maxLines="1"
+                android:text="2,757,300,000 đ"
+                android:textColor="@color/app_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/textNetBalanceHead"
+                app:layout_constraintStart_toStartOf="@+id/textNetBalanceHead"
+                app:layout_constraintTop_toBottomOf="@+id/textNetBalanceHead" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/app_grey_50"
+            android:fillViewport="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarLayout">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/textAccountInformationHead"
+                    style="@style/TextHeadingGrey28"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="27dp"
+                    android:layout_marginEnd="18dp"
+                    android:text="@string/account_information"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/accountInformationLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="11dp"
+                    android:background="@color/app_white"
+                    android:elevation="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textAccountInformationHead">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/accountNumberLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?selectableItemBackground"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/textAccountNumberHead"
+                            style="@style/TextSubHeadingGrey"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="@font/inter_regular"
+                            android:gravity="start|center_vertical"
+                            android:text="@string/account_no"
+                            android:textColor="@color/app_grey_600"
+                            android:textSize="15sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/textAccountNumber"
+                            style="@style/TextSubHeadingGrey"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginEnd="18dp"
+                            android:fontFamily="@font/inter_medium"
+                            android:gravity="end|center_vertical"
+                            android:textColor="@color/app_grey_900"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/textAccountNumberHead"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@+id/textAccountNumberHead"
+                            app:layout_constraintTop_toTopOf="@+id/textAccountNumberHead"
+                            tools:text="00310369881450" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/divider1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/app_grey_200"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/accountNumberLayout" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/accountTypeLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?selectableItemBackground"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/divider1">
+
+                        <TextView
+                            android:id="@+id/textAccountTypeHead"
+                            style="@style/TextSubHeadingGrey"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="@font/inter_regular"
+                            android:gravity="start|center_vertical"
+                            android:text="@string/account_type"
+                            android:textColor="@color/app_grey_600"
+                            android:textSize="15sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/textAccountType"
+                            style="@style/TextSubHeadingGrey"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginEnd="18dp"
+                            android:fontFamily="@font/inter_medium"
+                            android:gravity="end|center_vertical"
+                            android:textColor="@color/app_grey_900"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/textAccountTypeHead"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@+id/textAccountTypeHead"
+                            app:layout_constraintTop_toTopOf="@+id/textAccountTypeHead"
+                            tools:text="Current account" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/divider2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/app_grey_200"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/accountTypeLayout" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/controlBranchLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?selectableItemBackground"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/divider2">
+
+                        <TextView
+                            android:id="@+id/textControlBranchHead"
+                            style="@style/TextSubHeadingGrey"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="@font/inter_regular"
+                            android:gravity="start|center_vertical"
+                            android:text="@string/control_branch"
+                            android:textColor="@color/app_grey_600"
+                            android:textSize="15sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/textControlBranch"
+                            style="@style/TextSubHeadingGrey"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginEnd="18dp"
+                            android:fontFamily="@font/inter_medium"
+                            android:gravity="end|center_vertical"
+                            android:textColor="@color/app_grey_900"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/textControlBranchHead"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@+id/textControlBranchHead"
+                            app:layout_constraintTop_toTopOf="@+id/textControlBranchHead"
+                            tools:text="Hai Phong" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/divider3"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/app_grey_200"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/controlBranchLayout" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/amountHoldsLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?selectableItemBackground"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/divider3">
+
+                        <TextView
+                            android:id="@+id/textAmountHoldsHead"
+                            style="@style/TextSubHeadingGrey"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="@font/inter_regular"
+                            android:gravity="start|center_vertical"
+                            android:text="@string/amount_holds"
+                            android:textColor="@color/app_grey_600"
+                            android:textSize="15sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/textAmountHolds"
+                            style="@style/TextSubHeadingGrey"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginEnd="18dp"
+                            android:fontFamily="@font/inter_medium"
+                            android:gravity="end|center_vertical"
+                            android:textColor="@color/app_grey_900"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/textAmountHoldsHead"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@+id/textAmountHoldsHead"
+                            app:layout_constraintTop_toTopOf="@+id/textAmountHoldsHead"
+                            tools:text="106,000,000 ₫" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/divider4"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/app_grey_200"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/amountHoldsLayout" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/amountHoldsUntilLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?selectableItemBackground"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/divider4">
+
+                        <TextView
+                            android:id="@+id/textAmountHoldsUntilHead"
+                            style="@style/TextSubHeadingGrey"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="@font/inter_regular"
+                            android:gravity="start|center_vertical"
+                            android:text="@string/amount_holds_until"
+                            android:textColor="@color/app_grey_600"
+                            android:textSize="15sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/textAmountHoldsUntil"
+                            style="@style/TextSubHeadingGrey"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginEnd="18dp"
+                            android:fontFamily="@font/inter_medium"
+                            android:gravity="end|center_vertical"
+                            android:textColor="@color/app_grey_900"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/textAmountHoldsUntilHead"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@+id/textAmountHoldsUntilHead"
+                            app:layout_constraintTop_toTopOf="@+id/textAmountHoldsUntilHead"
+                            tools:text="30/05/2022" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/textTransactionHistoryHead"
+                    style="@style/TextHeadingGrey28"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="27dp"
+                    android:layout_marginEnd="18dp"
+                    android:text="@string/transaction_history"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/accountInformationLayout" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/transactionHistoryLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="11dp"
+                    android:background="@color/app_white"
+                    android:elevation="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textTransactionHistoryHead">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/allTransactionsLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?selectableItemBackground"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/textAllTransactionsHead"
+                            style="@style/TextSubHeadingGrey"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="@font/inter_regular"
+                            android:gravity="start|center_vertical"
+                            android:text="@string/all_transactions"
+                            android:textColor="@color/app_grey_600"
+                            android:textSize="15sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/filterTransactionIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="18dp"
+                            android:checked="true"
+                            android:src="@drawable/ic_filter_icon"
+                            app:layout_constraintBottom_toBottomOf="@+id/textAllTransactionsHead"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/textAllTransactionsHead" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/divider5"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/app_grey_200"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/allTransactionsLayout" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/transactionHistoryRv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="40dp"
+                    android:clipToPadding="true"
+                    android:orientation="vertical"
+                    android:scrollbars="none"
+                    android:overScrollMode="never"
+                    android:elevation="1dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/item_view_transaction_history"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/transactionHistoryLayout"
+                    app:layout_constraintVertical_bias="0.0"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

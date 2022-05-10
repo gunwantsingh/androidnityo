@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="usernameRecoveredVm"
+            type="com.bb.vib.ui.accounts.forgotYourAccount.forgotUsernamePassword.usernameRecovered.UsernameRecoveredVM" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        tools:context=".ui.accounts.forgotYourAccount.forgotUsernamePassword.usernameRecovered.UsernameRecoveredFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/tickImageCard"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/app_white"
+                app:cardCornerRadius="250dp"
+                app:cardElevation="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageTick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_check_icon" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textUsernameRecovered"
+                style="@style/TextHeadingGrey"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="18dp"
+                android:gravity="center"
+                android:textSize="28sp"
+                android:textColor="@color/app_grey_900"
+                android:text="@string/username_recovered"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tickImageCard" />
+
+            <TextView
+                android:id="@+id/textUsernameRecoveredMessage"
+                style="@style/TextMessageGrey"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:gravity="center"
+                android:text="Your username has been sent to your registered mobile 090••••291 "
+                app:layout_constraintEnd_toEndOf="@+id/textUsernameRecovered"
+                app:layout_constraintStart_toStartOf="@+id/textUsernameRecovered"
+                app:layout_constraintTop_toBottomOf="@+id/textUsernameRecovered" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonLoginNow"
+                style="@style/BlueGradientButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="120dp"
+                android:text="@string/login_now"
+                android:paddingTop="13dp"
+                android:paddingBottom="13dp"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                app:layout_constraintEnd_toEndOf="@+id/textUsernameRecovered"
+                app:layout_constraintStart_toStartOf="@+id/textUsernameRecovered"
+                app:layout_constraintTop_toBottomOf="@+id/textUsernameRecovered" />
+
+            <ImageView
+                android:id="@+id/imageRecovered"
+                android:layout_width="270dp"
+                android:layout_height="270dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"
+                android:src="@drawable/recovered_image"
+                android:layout_marginTop="34dp"
+                android:layout_marginBottom="34dp"
+                android:elevation="1dp"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buttonLoginNow"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <ImageView
+                android:id="@+id/imageRecoveredBackground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/ic_recovered_background_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageRecovered"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="otpAuthenticationVm"
+            type="com.bb.vib.ui.home.others.smartOtpPin.activeSmartOtp.otpAuthentication.OtpAuthenticationVM" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        tools:context=".ui.home.others.smartOtpPin.activeSmartOtp.otpAuthentication.OtpAuthenticationFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textConfirmSmartOtp"
+                style="@style/TextHeadingGrey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"
+                android:text="@string/confirm_smart_otp_pin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textConfirmSmartOtpMessage"
+                style="@style/TextMessageGrey"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="86dp"
+                android:layout_marginEnd="18dp"
+                android:text="One time password (OTP) has been sent to mobile 090••••291"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textResendOtp"
+                style="@style/TextMessageGrey"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="26dp"
+                android:layout_marginEnd="18dp"
+                tools:text="Resend OTP after 120s"
+                android:textColor="@color/app_grey_400"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editPin1" />
+
+            <EditText
+                android:id="@+id/editPin1"
+                style="@style/TextPin"
+                android:layout_width="48dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="148dp"
+                android:layout_marginBottom="36dp"
+                android:elevation="4dp"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintEnd_toStartOf="@+id/editPin2"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editPin2"
+                style="@style/TextPin"
+                android:layout_width="48dp"
+                android:layout_height="65dp"
+                android:layout_marginStart="8dp"
+                android:elevation="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/editPin1"
+                app:layout_constraintEnd_toStartOf="@+id/editPin3"
+                app:layout_constraintStart_toEndOf="@+id/editPin1"
+                app:layout_constraintTop_toTopOf="@+id/editPin1" />
+
+            <EditText
+                android:id="@+id/editPin3"
+                style="@style/TextPin"
+                android:layout_width="48dp"
+                android:layout_height="65dp"
+                android:layout_marginStart="8dp"
+                android:elevation="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/editPin2"
+                app:layout_constraintEnd_toStartOf="@+id/editPin4"
+                app:layout_constraintStart_toEndOf="@+id/editPin2"
+                app:layout_constraintTop_toTopOf="@+id/editPin2" />
+
+            <EditText
+                android:id="@+id/editPin4"
+                style="@style/TextPin"
+                android:layout_width="48dp"
+                android:layout_height="65dp"
+                android:layout_marginStart="8dp"
+                android:elevation="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/editPin3"
+                app:layout_constraintEnd_toStartOf="@+id/editPin5"
+                app:layout_constraintStart_toEndOf="@+id/editPin3"
+                app:layout_constraintTop_toTopOf="@+id/editPin3" />
+
+            <EditText
+                android:id="@+id/editPin5"
+                style="@style/TextPin"
+                android:layout_width="48dp"
+                android:layout_height="65dp"
+                android:layout_marginStart="8dp"
+                android:elevation="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/editPin4"
+                app:layout_constraintEnd_toStartOf="@+id/editPin6"
+                app:layout_constraintStart_toEndOf="@+id/editPin4"
+                app:layout_constraintTop_toTopOf="@+id/editPin4" />
+
+            <EditText
+                android:id="@+id/editPin6"
+                style="@style/TextPin"
+                android:layout_width="48dp"
+                android:layout_height="65dp"
+                android:layout_marginStart="8dp"
+                android:elevation="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/editPin5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/editPin5"
+                app:layout_constraintTop_toTopOf="@+id/editPin5" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonContinue"
+                style="@style/BlueGradientButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="24dp"
+                android:text="@string/text_continue"
+                app:layout_constraintVertical_bias="1.0"
+                app:layout_constraintTop_toBottomOf="@+id/editPin1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

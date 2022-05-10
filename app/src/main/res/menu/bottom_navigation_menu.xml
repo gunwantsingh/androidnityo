@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_account"
+        android:icon="@drawable/bn_account_selector"
+        android:title="@string/text_account" />
+
+    <item
+        android:id="@+id/navigation_transfer"
+        android:icon="@drawable/bn_transfer_selector"
+        android:title="@string/text_transfer" />
+    <item
+        android:id="@+id/navigation_qr"
+        android:icon="@drawable/bn_qr_selector"
+        android:title="@string/text_qr" />
+
+    <item
+        android:id="@+id/navigation_notification"
+        android:icon="@drawable/bn_notification_selector"
+        android:title="@string/text_notification" />
+
+    <item
+        android:id="@+id/navigation_others"
+        android:icon="@drawable/bn_others_selector"
+        android:title="@string/text_others" />
+
+</menu>
